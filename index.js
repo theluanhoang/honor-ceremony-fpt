@@ -94,6 +94,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
               <p><strong>QR Code:</strong></p>
               <img src="${qrImageUrl}" alt="QR Code">
             </div>
+            <a class="return-home" href="/upload">Upload them</a>
             <a class="return-home" href="/">Về trang chủ</a>
           </div>
         </body>
