@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Ảnh Học sinh - FPT Event</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+  Upload Ảnh Học Sinh
+</header>
+
+<div class="container">
+  <h2>Đăng tải ảnh học sinh và tạo mã QR</h2>
+  
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="studentId">Mã Học sinh (ID):</label>
+    <input type="text" id="studentId" name="studentId" required>
+
+    <label for="file">Chọn ảnh:</label>
+    <input type="file" id="file" name="file" accept="image/*" required>
+
+    <button type="submit">Upload và Sinh QR</button>
+  </form>
+
+  <a href="/">Về trang màn hình chiếu</a>
+</div>
+
+</body>
+</html>

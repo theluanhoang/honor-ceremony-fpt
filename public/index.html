@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Vinh danh Học sinh - LED Screen</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+
+<!-- Header ẩn đi luôn cho LED -->
+<header class="hide-header">
+  Vinh danh Học sinh Ưu tú
+</header>
+
+<!-- Fullscreen hiển thị ảnh -->
+<div class="fullscreen-container">
+  <img id="studentImage" class="fullscreen-image" src="" alt="Học sinh">
+</div>
+
+<script>
+  const socket = io();
+  const studentImage = document.getElementById('studentImage');
+
+  socket.on('newStudent', (imageUrl) => {
+    studentImage.src = imageUrl;
+
+    // Reset animation
+    studentImage.style.opacity = 0;
+    studentImage.style.transform = 'translate(-50%, -50%) scale(0.9)';
+    void studentImage.offsetWidth; // Trigger reflow
+    studentImage.classList.remove('fullscreen-image');
+    void studentImage.offsetWidth;
+    studentImage.classList.add('fullscreen-image');
+  });
+</script>
+
+</body>
+</html>
