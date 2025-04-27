@@ -15,7 +15,7 @@ body {
 
 /* Header */
 header {
-    background-color: #ff6600; /* Cam FPT */
+    background-color: #ff6600;
     color: white;
     padding: 1.5rem 1rem;
     text-align: center;
@@ -24,7 +24,6 @@ header {
     letter-spacing: 1px;
 }
 
-/* Container cho trang upload */
 .container {
     max-width: 900px;
     margin: 3rem auto;
@@ -145,7 +144,57 @@ a:hover {
     }
 }
 
-/* Ẩn header ở chế độ fullscreen */
 .hide-header {
     display: none;
+}
+
+/* --------- Upload Success Styles --------- */
+
+/* Success container */
+.success-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Thông báo thành công */
+.success-message {
+    font-size: 1.5rem;
+    color: #4CAF50; /* Màu xanh lá cho thành công */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* QR code section */
+.qr-section {
+    margin-top: 2rem;
+}
+
+.qr-section img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button về trang chủ */
+.return-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.return-home:hover {
+    background-color: #e65c00;
 }
