@@ -1,8 +1,0 @@
-# Node modules
-node_modules/
-
-# Environment variables
-.env
-
-# VSCode settings (nếu không muốn đẩy lên)
-.vscode/
