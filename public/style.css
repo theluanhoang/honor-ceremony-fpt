@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* Base styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
@@ -14,15 +15,16 @@ body {
 
 /* Header */
 header {
-    background-color: #ff6600;
+    background-color: #ff6600; /* Cam FPT */
     color: white;
     padding: 1.5rem 1rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* Container */
+/* Container cho trang upload */
 .container {
     max-width: 900px;
     margin: 3rem auto;
@@ -33,7 +35,7 @@ header {
     text-align: center;
 }
 
-/* Form and Inputs */
+/* Form & Inputs */
 form {
     margin-top: 2rem;
 }
@@ -43,6 +45,7 @@ label {
     margin-bottom: 8px;
     font-weight: 600;
     text-align: left;
+    font-size: 1.1rem;
 }
 
 input[type="text"],
@@ -54,6 +57,12 @@ button {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1rem;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #ff6600;
 }
 
 button {
@@ -69,14 +78,14 @@ button:hover {
     background-color: #e65c00;
 }
 
-/* Image Styling */
+/* Ảnh xem trước */
 img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-/* Fade-in Animation */
+/* Animation fade-in */
 .fade-in {
     opacity: 0;
     transform: scale(0.95);
@@ -90,7 +99,7 @@ img {
     }
 }
 
-/* Link Styling */
+/* Link upload thành công */
 a {
     display: inline-block;
     margin-top: 20px;
@@ -103,8 +112,9 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Thêm phần style cho màn hình LED */
+/* --------- Màn hình LED --------- */
 
+/* Fullscreen container */
 .fullscreen-container {
     position: relative;
     width: 100%;
@@ -113,6 +123,7 @@ a:hover {
     background: linear-gradient(135deg, #ffffff, #f0f0f0);
 }
 
+/* Ảnh fullscreen */
 .fullscreen-image {
     position: absolute;
     top: 50%;
@@ -134,7 +145,7 @@ a:hover {
     }
 }
 
-/* Header ẩn đi ở màn hình LED */
+/* Ẩn header ở chế độ fullscreen */
 .hide-header {
     display: none;
 }

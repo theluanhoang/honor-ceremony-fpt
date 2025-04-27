@@ -2,28 +2,37 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vinh danh Học sinh - LED Screen</title>
   <link rel="stylesheet" href="/style.css">
   <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
 
-<!-- Header ẩn đi luôn cho LED -->
+<!-- Header ẩn luôn trên LED -->
 <header class="hide-header">
   Vinh danh Học sinh Ưu tú
 </header>
 
-<!-- Fullscreen hiển thị ảnh -->
+<!-- Fullscreen hiển thị ảnh hoặc thông điệp chờ -->
 <div class="fullscreen-container">
-  <img id="studentImage" class="fullscreen-image" src="" alt="Học sinh">
+  <div id="waitingMessage" style="text-align: center; color: #ff6600; font-size: 2.5rem; font-weight: bold; letter-spacing: 1px;">
+    Đang chờ vinh danh...
+  </div>
+  <img id="studentImage" class="fullscreen-image" src="" alt="Học sinh" style="display: none;">
 </div>
 
 <script>
   const socket = io();
   const studentImage = document.getElementById('studentImage');
+  const waitingMessage = document.getElementById('waitingMessage');
 
   socket.on('newStudent', (imageUrl) => {
+    if (waitingMessage) {
+      waitingMessage.style.display = 'none';
+    }
     studentImage.src = imageUrl;
+    studentImage.style.display = 'block';
 
     // Reset animation
     studentImage.style.opacity = 0;
